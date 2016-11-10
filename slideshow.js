@@ -1,52 +1,96 @@
 let slideIndex = 1;
+let right ='';
 showSlides(slideIndex);
-
-function plusSlides(n) {
+function nextSlide(n) {
+  right = true;
   showSlides(slideIndex += n);
 }
-
+function prevSlide(n) {
+  right = false;
+  showSlides(slideIndex += n);
+}
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
+  let img1 = document.querySelector('.image_slide1');
+  let img2 = document.querySelector('.image_slide2');
+  let img3 = document.querySelector('.image_slide3');
+  function onAnimationEnd(e) {}
+  function onAnimationStart(e) {}
+  function onAnimationIteration(e) {}
   let i;
-  let slides = document.getElementsByClassName("mySlides");
+  //let img2 = document.getElementsByClassName("image_slide2");
+  //let img3 = document.getElementsByClassName("image_slide3");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
+  let ss = document.styleSheets;
+  if (n > 3) {slideIndex = 1}
+  if (n < 1) {slideIndex = 3}
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  if(slideIndex !== slides.length){
-    slides[slideIndex-1].style.display = "block";
-    slides[slideIndex-1].style.zIndex = 1;
-    slides[slideIndex].style.display = "block";
-    slides[slideIndex].style.zIndex = 10;
-  }else{
-    slides[slideIndex-1].style.display = "block";
-    slides[slideIndex-1].style.zIndex = 1;
-    slides[0].style.display = "block";
-    slides[0].style.zIndex = 10;
+  $('.image_slide1').removeClass("previousImagePrev");
+  $('.image_slide1').removeClass("currentImagePrev");
+  $('.image_slide1').removeClass("nextImagePrev");
+  $('.image_slide1').removeClass("previousImageNext");
+  $('.image_slide1').removeClass("currentImageNext");
+  $('.image_slide1').removeClass("nextImageNext");
+  $('.image_slide2').removeClass("previousImagePrev");
+  $('.image_slide2').removeClass("currentImagePrev");
+  $('.image_slide2').removeClass("nextImagePrev");
+  $('.image_slide2').removeClass("previousImageNext");
+  $('.image_slide2').removeClass("currentImageNext");
+  $('.image_slide2').removeClass("nextImageNext");
+  $('.image_slide3').removeClass("previousImagePrev");
+  $('.image_slide3').removeClass("currentImagePrev");
+  $('.image_slide3').removeClass("nextImagePrev");
+  $('.image_slide3').removeClass("previousImageNext");
+  $('.image_slide3').removeClass("currentImageNext");
+  $('.image_slide3').removeClass("nextImageNext");
+  if(right === true){
+    if(slideIndex === 1){
+      console.log(1);
+      $('.image_slide1').addClass("currentImageNext");
+      $('.image_slide2').addClass("previousImageNext");
+      $('.image_slide3').addClass("nextImageNext");
+    }else if(slideIndex === 2){
+      console.log(2);
+      $('.image_slide1').addClass("previousImageNext");
+      $('.image_slide2').addClass("nextImageNext");
+      $('.image_slide3').addClass("currentImageNext");
+    }else if(slideIndex === 3){
+      console.log(3);
+      $('.image_slide1').addClass("nextImageNext");
+      $('.image_slide2').addClass("currentImageNext");
+      $('.image_slide3').addClass("previousImageNext");
+    }
+  }else if(right === false){
+    if(slideIndex === 1){
+      console.log(1);
+      $('.image_slide1').addClass("currentImagePrev");
+      $('.image_slide2').addClass("previousImagePrev");
+      $('.image_slide3').addClass("nextImagePrev");
+    }else if(slideIndex === 2){
+      console.log(2);
+      $('.image_slide1').addClass("previousImagePrev");
+      $('.image_slide2').addClass("nextImagePrev");
+      $('.image_slide3').addClass("currentImagePrev");
+    }else if(slideIndex === 3){
+      console.log(3);
+      $('.image_slide1').addClass("nextImagePrev");
+      $('.image_slide2').addClass("currentImagePrev");
+      $('.image_slide3').addClass("previousImagePrev");
+    }
   }
-  dots[slideIndex-1].className += " active";
+  img1.addEventListener('animationstart', onAnimationStart, false);
+  img1.addEventListener('animationiteration', onAnimationIteration, false);
+  img1.addEventListener('animationend', onAnimationEnd, false);
+  img2.addEventListener('animationstart', onAnimationStart, false);
+  img2.addEventListener('animationiteration', onAnimationIteration, false);
+  img2.addEventListener('animationend', onAnimationEnd, false);
+  img3.addEventListener('animationstart', onAnimationStart, false);
+  img3.addEventListener('animationiteration', onAnimationIteration, false);
+  img3.addEventListener('animationend', onAnimationEnd, false);
+  right = '';
 }
-/*setInterval(() => {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (slideIndex > slides.length) {slideIndex = 1}
-  if (slideIndex < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  ++slideIndex;
-}, 3*1000)*/

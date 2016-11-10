@@ -9,7 +9,7 @@ header {
   height: 48px;
   opacity: 0.8;
   background-color: black;
-  z-index: 1;
+  z-index: 9999;
   display: block;
   box-sizing: content-box;
   direction: ltr;
@@ -293,15 +293,17 @@ background-color: rgba(180, 180, 180, 0.25);
   height: 40vw;
   background-position: center center;
   position: absolute;
+  display: block;
 }
 .image_slide1 {
   background-image: url("http://images.apple.com/v/home/cz/images/gallery/macbookpro_large.jpg");
+  z-index: 3;
 }
 .image_slide2 {
-  background-image: url("http://images.apple.com/v/home/cz/images/gallery/iphone_large.jpg");
+  background-image: url("http://images.apple.com/v/home/cz/images/gallery/event_large.jpg");
 }
 .image_slide3 {
-  background-image: url("http://images.apple.com/v/home/cz/images/gallery/event_large.jpg");
+  background-image: url("http://images.apple.com/v/home/cz/images/gallery/iphone_large.jpg");
 }
 /* The dots/bullets/indicators */
 .dot {
@@ -319,29 +321,105 @@ background-color: rgba(180, 180, 180, 0.25);
   background-color: #717171;
 }
 
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+/* animation */
+.currentImageNext {
+  animation-name: currentImageNext;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  z-index: 3;
+}
+.previousImageNext {
+  animation-name: previousImageNext;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  z-index: 2;
+}
+.nextImageNext {
+  animation-name: nextImageNext;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  z-index: 1;
+}
+.currentImagePrev {
+  animation-name: currentImagePrev;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  z-index: 2;
+}
+.previousImagePrev {
+  animation-name: previousImagePrev;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  z-index: 1;
+}
+.nextImagePrev {
+  animation-name: nextImagePrev;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  z-index: 3;
 }
 
-@keyframes fade {
+@keyframes currentImageNext {
   from {
     transition-timing-function: cubic-bezier(.1, 0, .8, 1);
     transform: translate(100vw, 0px) scale3d(1, 1, 1);
   }
   to {
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
     transform: translate(0px, 0px) scale3d(1, 1, 1);
   }
 }
-@keyframes go {
+@keyframes previousImageNext {
   from {
-
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(0px, 0px) scale3d(1, 1, 1);
   }
   to {
-
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(-200px, 100px) scale3d(.9, .9, 1);
   }
 }
+@keyframes nextImageNext {
+  from {
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(-200px, 100px) scale3d(.9, .9, 1);
+  }
+  to {
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(100vw, 0px) scale3d(1, 1, 1);
+  }
+}
+@keyframes nextImagePrev{
+  from {
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(0px, 0px) scale3d(1, 1, 1);
+  }
+  to {
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(100vw, 0px) scale3d(1, 1, 1);
+  }
+}
+@keyframes currentImagePrev{
+  from {
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(-200px, 100px) scale3d(.9, .9, 1);
+  }
+  to {
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(0px, 0px) scale3d(1, 1, 1);
+  }
+}
+@keyframes previousImagePrev{
+  from {
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(100vw, 0px) scale3d(1, 1, 1);
+  }
+  to {
+    transition-timing-function: cubic-bezier(.1, 0, .8, 1);
+    transform: translate(-200px, 100px) scale3d(.9, .9, 1);
+  }
+}
+
 /*hamburger*/
 #nav-icon4 {
   width: 40px;
