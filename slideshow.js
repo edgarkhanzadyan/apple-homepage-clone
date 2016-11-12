@@ -17,9 +17,6 @@ function showSlides(n) {
   let img1 = document.querySelector('.image_slide1');
   let img2 = document.querySelector('.image_slide2');
   let img3 = document.querySelector('.image_slide3');
-  function onAnimationEnd(e) {}
-  function onAnimationStart(e) {}
-  function onAnimationIteration(e) {}
   let i;
   //let img2 = document.getElementsByClassName("image_slide2");
   //let img3 = document.getElementsByClassName("image_slide3");
@@ -83,14 +80,14 @@ function showSlides(n) {
       $('.image_slide3').addClass("previousImagePrev");
     }
   }
-  img1.addEventListener('animationstart', onAnimationStart, false);
-  img1.addEventListener('animationiteration', onAnimationIteration, false);
-  img1.addEventListener('animationend', onAnimationEnd, false);
-  img2.addEventListener('animationstart', onAnimationStart, false);
-  img2.addEventListener('animationiteration', onAnimationIteration, false);
-  img2.addEventListener('animationend', onAnimationEnd, false);
-  img3.addEventListener('animationstart', onAnimationStart, false);
-  img3.addEventListener('animationiteration', onAnimationIteration, false);
-  img3.addEventListener('animationend', onAnimationEnd, false);
+  img1.addEventListener('animationstart', false);
+  img1.addEventListener('animationiteration', false);
+  img1.addEventListener('animationend', false);
+  img2.addEventListener('animationstart', false);
+  img2.addEventListener('animationiteration', false);
+  img2.addEventListener('animationend',  false);
+  img3.addEventListener('animationstart',  false);
+  img3.addEventListener('animationiteration',  false);
+  img3.addEventListener('animationend',  false);
   right = '';
 }
