@@ -110,8 +110,8 @@ html, body {
   white-space: nowrap;
   vertical-align: top;
   text-align: center;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0;
+  margin-right: 0;
   background-color: black;
   list-style-type: none;
   width: 5vw;
@@ -212,6 +212,8 @@ html, body {
   }
   .pict1,.pict2,.pict3,.pict4{
     background-size: 736px 200px;
+    margin: 0;
+    padding: 0;
   }
   .pict1{
     background-image: url(http://images.apple.com/v/home/cz/images/shared/promos/apple_tv_small.jpg);
@@ -234,6 +236,8 @@ html, body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
 }
 .navFoot{
   position: relative;
@@ -271,6 +275,58 @@ html, body {
 .item_nav_foot:hover {
   text-decoration: underline;
 }
+
+.item_nav_foot_mob1,
+.item_nav_foot_mob2,
+.item_nav_foot_mob3,
+.item_nav_foot_mob4,
+.item_nav_foot_mob5,
+.item_nav_foot_mob6,
+.item_nav_foot_mob7{
+  color: #666;
+  font-family: "Myriad Set Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.66667;
+  letter-spacing: normal;
+  font-weight: 600;
+  margin-top: 20px;
+  list-style-type: none;
+  cursor: pointer;
+  border-top: 1px solid #e1c4c4;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+.item_nav_foot_unvis1,
+.item_nav_foot_unvis2,
+.item_nav_foot_unvis3,
+.item_nav_foot_unvis4,
+.item_nav_foot_unvis5,
+.item_nav_foot_unvis6,
+.item_nav_foot_unvis7{
+  display: none;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+.item_nav_foot_unvis1.item_nav_foot_vis1,
+.item_nav_foot_unvis2.item_nav_foot_vis2,
+.item_nav_foot_unvis3.item_nav_foot_vis3,
+.item_nav_foot_unvis4.item_nav_foot_vis4,
+.item_nav_foot_unvis5.item_nav_foot_vis5,
+.item_nav_foot_unvis6.item_nav_foot_vis6,
+.item_nav_foot_unvis7.item_nav_foot_vis7{
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  transition: 2s;
+  background-color: #f2f2f2;
+  display: block;
+  z-index: 9999;
+  overflow: hidden;
+  height: 100%;
+}
+
 .div_foot_column {
   margin: 0 auto;
   padding: 0 22px;
@@ -284,7 +340,8 @@ html, body {
   height: 40vw;
   overflow: hidden;
   position: relative;
-  margin: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .prev, .next {
