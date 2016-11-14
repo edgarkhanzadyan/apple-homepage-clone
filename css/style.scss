@@ -200,7 +200,32 @@ html, body {
     background-image: url(http://images.apple.com/v/home/cz/images/shared/promos/accessibility_medium.jpg);
   }
 }
+.navFootMobile {
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+  box-sizing: content-box;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+}
+.navFoot{
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+}
 @media only screen and (max-width: 735px){
+  .navFootMobile{
+    display: flex;
+  }
+  .navFoot{
+    display: none;
+  }
   .flexColumn{
     display: block;
   }
@@ -227,25 +252,6 @@ html, body {
   .pict4{
     background-image: url(http://images.apple.com/v/home/cz/images/shared/promos/accessibility_small.jpg);
   }
-}
-.navFootMobile {
-  position: relative;
-  z-index: 1;
-  padding-top: 20px;
-  box-sizing: content-box;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 auto;
-  text-align: center;
-}
-.navFoot{
-  position: relative;
-  z-index: 1;
-  padding-top: 20px;
-  box-sizing: content-box;
-  display: flex;
-  justify-content: center;
 }
 .divFoot{
   width: 20%;
