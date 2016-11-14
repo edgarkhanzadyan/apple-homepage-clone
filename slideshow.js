@@ -18,8 +18,6 @@ function showSlides(n) {
   let img2 = document.querySelector('.image_slide2');
   let img3 = document.querySelector('.image_slide3');
   let i;
-  //let img2 = document.getElementsByClassName("image_slide2");
-  //let img3 = document.getElementsByClassName("image_slide3");
   let dots = document.getElementsByClassName("dot");
   let ss = document.styleSheets;
   if (n > 3) {slideIndex = 1}

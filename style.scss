@@ -226,6 +226,15 @@ html, body {
     background-image: url(http://images.apple.com/v/home/cz/images/shared/promos/accessibility_small.jpg);
   }
 }
+.navFootMobile {
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .navFoot{
   position: relative;
   z-index: 1;
@@ -278,7 +287,6 @@ html, body {
   margin: auto;
 }
 
-/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -296,7 +304,6 @@ html, body {
   border-radius: 0 3px 3px 0;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 100%;
@@ -322,7 +329,6 @@ html, body {
   z-index: 3;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
 background-color: rgba(180, 180, 180, 0.25);
 }
@@ -344,21 +350,6 @@ background-color: rgba(180, 180, 180, 0.25);
 }
 .image_slide3 {
   background-image: url("http://images.apple.com/v/home/cz/images/gallery/iphone_large.jpg");
-}
-/* The dots/bullets/indicators */
-.dot {
-  cursor:pointer;
-  height: 2px;
-  width: 40px;
-  margin: 0 2px;
-  background-color: #bbb;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-  z-index: 1000;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
 }
 
 /* animation */
@@ -530,7 +521,6 @@ background-color: rgba(180, 180, 180, 0.25);
 .mobile {
   display: none;
   transition: 2s;
-  height: 0px;
 }
 .mobile.navigation {
   justify-content: center;
@@ -539,9 +529,10 @@ background-color: rgba(180, 180, 180, 0.25);
   background-color: black;
   display: block;
   z-index: 9999;
+  overflow: hidden;
 }
 /*hamburger*/
-#nav-icon4 {
+#nav-icon {
   width: 40px;
   height: 45px;
   position: relative;
@@ -551,7 +542,7 @@ background-color: rgba(180, 180, 180, 0.25);
   transition: .5s ease-in-out;
   cursor: pointer;
 }
-#nav-icon4 span {
+#nav-icon span {
   display: block;
   position: absolute;
   height: 2px;
@@ -565,37 +556,37 @@ background-color: rgba(180, 180, 180, 0.25);
   transition: .25s ease-in-out;
 }
 
-#nav-icon4 span:nth-child(1) {
+#nav-icon span:nth-child(1) {
   top: 10px;
   -webkit-transform-origin: left center;
   transform-origin: left center;
 }
 
-#nav-icon4 span:nth-child(2) {
+#nav-icon span:nth-child(2) {
   top: 20px;
   -webkit-transform-origin: left center;
   transform-origin: left center;
 }
 
-#nav-icon4 span:nth-child(3) {
+#nav-icon span:nth-child(3) {
   top: 30px;
   -webkit-transform-origin: left center;
   transform-origin: left center;
 }
 
-#nav-icon4.open span:nth-child(1) {
+#nav-icon.open span:nth-child(1) {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 5px;
   left: 8px;
 }
 
-#nav-icon4.open span:nth-child(2) {
+#nav-icon.open span:nth-child(2) {
   width: 0%;
   opacity: 0;
 }
 
-#nav-icon4.open span:nth-child(3) {
+#nav-icon.open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   top: 33px;

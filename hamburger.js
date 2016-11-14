@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	let open = false;
-	$('#nav-icon4').click(function(){
+	$('#nav-icon').click(function(){
 		$(this).toggleClass('open');
 		$('.mobile').toggleClass('navigation');
 		$('.header').toggleClass('toggle');
